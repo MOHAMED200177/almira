@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="placeholder-agricultural">
+  <rect width="400" height="300" fill="#f1f5e0"/>
+  <circle cx="330" cy="50" r="90" fill="#5b7f1f" opacity=".12"/>
+  <circle cx="60" cy="280" r="110" fill="#5b7f1f" opacity=".10"/>
+  <g fill="#5b7f1f"><path d="M200 70c-62 22-92 74-72 134 8 24 30 38 52 38 54 0 100-50 92-112-3-24-30-50-72-60z"/><path d="M200 90v150" stroke="#fff" stroke-width="6" fill="none" opacity=".7"/><path d="M200 140l36-26M200 176l-38-26M200 206l32-22" stroke="#fff" stroke-width="5" fill="none" opacity=".6"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="placeholder-animal-care">
+  <rect width="400" height="300" fill="#e8f1ec"/>
+  <circle cx="330" cy="50" r="90" fill="#3b7a57" opacity=".12"/>
+  <circle cx="60" cy="280" r="110" fill="#3b7a57" opacity=".10"/>
+  <g fill="#3b7a57"><ellipse cx="200" cy="190" rx="52" ry="42"/><ellipse cx="136" cy="140" rx="20" ry="27"/><ellipse cx="180" cy="104" rx="20" ry="28"/><ellipse cx="226" cy="104" rx="20" ry="28"/><ellipse cx="268" cy="140" rx="20" ry="27"/></g>
+</svg>
