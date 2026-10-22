@@ -71,3 +71,23 @@ export const ChevronIcon = ({ className }: IconProps) => (
 export const BackIcon = ({ className }: IconProps) => (
   <svg {...base} strokeWidth={2.2} className={className}><path d="M15 5l-7 7 7 7" /></svg>
 );
+
+export const InfoIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}><circle cx="12" cy="12" r="9" /><path d="M12 11v5.5M12 7.6v.01" /></svg>
+);
+
+export const GlobeIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.8 2.6 4 5.6 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.6-4-9s1.2-6.4 4-9z" /></svg>
+);
+
+export const HeartIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg>
+);
+
+export const FlaskIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}><path d="M9 3h6M10 3v6l-5 9.2A2 2 0 0 0 6.8 21h10.4a2 2 0 0 0 1.8-2.8L14 9V3" /><path d="M7.5 15h9" /></svg>
+);
+
+export const CycleIcon = ({ className }: IconProps) => (
+  <svg {...base} className={className}><path d="M20 12a8 8 0 0 1-13.7 5.6M4 12a8 8 0 0 1 13.7-5.6" /><path d="M18 3v4h-4M6 21v-4h4" /></svg>
+);

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckIcon, PawIcon, ShieldIcon } from "@/components/Icons";
+import { CheckIcon, PawIcon } from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
 import ProductReel from "@/components/ProductReel";
 import SmartImage from "@/components/SmartImage";
@@ -83,7 +83,8 @@ export default async function ProductPage({ params }: Props) {
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
                 { "@type": "ListItem", position: 2, name: "Products", item: absoluteUrl("/products") },
-                { "@type": "ListItem", position: 3, name: p.name, item: url },
+                ...(category ? [{ "@type": "ListItem", position: 3, name: category.name, item: absoluteUrl(`/categories/${category.id}`) }] : []),
+                { "@type": "ListItem", position: category ? 4 : 3, name: p.name, item: url },
               ],
             },
           ],
@@ -93,6 +94,11 @@ export default async function ProductPage({ params }: Props) {
       <section className="container section detail-section" style={{ "--accent": p.accent } as React.CSSProperties}>
         <nav aria-label="Breadcrumb" className="crumbs">
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <Link href="/products">Products</Link>{" "}
+          {category && (
+            <>
+              <span aria-hidden="true">/</span> <Link href={`/categories/${category.id}`}>{category.name}</Link>{" "}
+            </>
+          )}
           <span aria-hidden="true">/</span> <span aria-current="page">{p.name}</span>
         </nav>
 
@@ -114,7 +120,6 @@ export default async function ProductPage({ params }: Props) {
 
           <div className="detail__info">
             <ul className="tags" aria-label="Product tags">
-              <li className="tag tag--solid"><ShieldIcon /> For veterinary use only</li>
               <li className="tag">{p.form}</li>
               <li className="tag">{p.packSize}</li>
             </ul>

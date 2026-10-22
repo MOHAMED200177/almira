@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BackIcon, ChevronIcon, GridIcon, HomeIcon } from "./Icons";
+import { BackIcon, ChevronIcon, GridIcon, HomeIcon, InfoIcon } from "./Icons";
 
 interface Props {
   products: { id: string; name: string; accent: string }[];
@@ -10,7 +10,7 @@ interface Props {
 
 /**
  * Thumb-zone dock, shown on phones only (see CSS).
- * Home and catalog pages: Home / Products tabs.
+ * Other pages: Home / Products / About tabs.
  * Product pages: back to the catalog plus previous / next product, so you can flip through all four with one thumb.
  */
 export default function MobileBar({ products }: Props) {
@@ -40,7 +40,8 @@ export default function MobileBar({ products }: Props) {
 
   const tabs = [
     { href: "/", label: "Home", Icon: HomeIcon, active: pathname === "/" },
-    { href: "/products", label: "Products", Icon: GridIcon, active: pathname.startsWith("/products") },
+    { href: "/products", label: "Products", Icon: GridIcon, active: pathname.startsWith("/products") || pathname.startsWith("/categories") },
+    { href: "/about", label: "About", Icon: InfoIcon, active: pathname.startsWith("/about") },
   ];
   return (
     <nav className="mbar" aria-label="Quick navigation">

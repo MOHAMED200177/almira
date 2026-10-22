@@ -16,22 +16,6 @@ export default function Flag({ code, className }: { code: FlagCode; className?: 
 }
 
 const shapes: Record<FlagCode, React.ReactNode> = {
-  eg: (
-    <>
-      <rect width="30" height="7" fill="#ce1126" />
-      <rect y="6.67" width="30" height="6.67" fill="#fff" />
-      <rect y="13.33" width="30" height="6.67" fill="#000" />
-      <path d="M15 7.6c1.5 0 2.4 1 2.4 2.1 0 1.4-1.2 2.7-2.4 2.7s-2.4-1.3-2.4-2.7c0-1.1.9-2.1 2.4-2.1z" fill="#c09300" />
-    </>
-  ),
-  ps: (
-    <>
-      <rect width="30" height="6.67" fill="#000" />
-      <rect y="6.67" width="30" height="6.67" fill="#fff" />
-      <rect y="13.33" width="30" height="6.67" fill="#007a3d" />
-      <path d="M0 0l13 10L0 20z" fill="#ce1126" />
-    </>
-  ),
   us: (
     <>
       <rect width="30" height="20" fill="#fff" />
@@ -54,6 +38,19 @@ const shapes: Record<FlagCode, React.ReactNode> = {
     <>
       <rect width="30" height="20" fill="#fff" />
       <circle cx="15" cy="10" r="5" fill="#bc002d" />
+    </>
+  ),
+  nl: (
+    <>
+      <rect width="30" height="6.67" fill="#ae1c28" />
+      <rect y="6.67" width="30" height="6.67" fill="#fff" />
+      <rect y="13.33" width="30" height="6.67" fill="#21468b" />
+    </>
+  ),
+  es: (
+    <>
+      <rect width="30" height="20" fill="#aa151b" />
+      <rect y="5" width="30" height="10" fill="#f1bf00" />
     </>
   ),
 };

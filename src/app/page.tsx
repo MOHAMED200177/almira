@@ -1,10 +1,11 @@
 import Link from "next/link";
+import AboutFacts from "@/components/AboutFacts";
 import CategoryList from "@/components/CategoryList";
 import Hero from "@/components/Hero";
 import { ArrowIcon, DropIcon, PawIcon, ShieldIcon } from "@/components/Icons";
 import JsonLd from "@/components/JsonLd";
-import ProductReel from "@/components/ProductReel";
 import { siteConfig } from "@/config/site";
+import { about } from "@/data/about";
 import { buildMetadata } from "@/lib/seo";
 import { getCategories, getProducts } from "@/services/catalog";
 import { absoluteUrl } from "@/utils";
@@ -18,7 +19,7 @@ export const metadata = buildMetadata({
 });
 
 const trust = [
-  { Icon: ShieldIcon, title: "For veterinary use only", text: "Professional-grade formulas by Almira." },
+  { Icon: ShieldIcon, title: "Professional-grade formulas", text: "Developed and made by Almira." },
   { Icon: PawIcon, title: "Cattle, sheep & poultry", text: "Labelled for three livestock groups." },
   { Icon: DropIcon, title: "Oily-form formulas", text: "Ready-to-use 1000 ml bottles." },
 ];
@@ -41,6 +42,7 @@ export default async function HomePage() {
               url: absoluteUrl("/"),
               logo: absoluteUrl("/almira-logo.png"),
               description: siteConfig.seo.homeDescription,
+              address: { "@type": "PostalAddress", addressLocality: "Poznań", addressCountry: "PL" },
             },
             {
               "@type": "WebSite",
@@ -79,21 +81,23 @@ export default async function HomePage() {
         </ul>
       </section>
 
-      <section className="section" aria-labelledby="featured-title">
-        <div className="container section__head">
-          <div>
-            <p className="eyebrow">Our formulas</p>
-            <h2 id="featured-title">Featured veterinary products</h2>
-          </div>
-          <Link href="/products" className="link">See all <ArrowIcon /></Link>
-        </div>
-        <ProductReel products={products} categories={categories} label="Featured products, swipe sideways" />
-      </section>
-
       <section className="container section" aria-labelledby="categories-title">
         <p className="eyebrow">Browse by need</p>
         <h2 id="categories-title">Product categories</h2>
         <CategoryList categories={categories} products={products} />
+      </section>
+
+      <section className="container section" aria-labelledby="who-title">
+        <div className="who">
+          <div>
+            <p className="eyebrow">{about.title}</p>
+            <h2 id="who-title">Almira: Veterinary Pharmaceuticals</h2>
+            <p>{about.lead}</p>
+            <p>{about.story[1]}</p>
+            <Link href="/about" className="link">Read our story <ArrowIcon /></Link>
+          </div>
+          <AboutFacts limit={3} label="Almira at a glance" />
+        </div>
       </section>
     </>
   );

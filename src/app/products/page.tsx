@@ -1,7 +1,5 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/JsonLd";
-import ProductsExplorer from "@/components/ProductsExplorer";
-import ProductsView from "@/components/ProductsView";
+import CategoryList from "@/components/CategoryList";
 import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
 import { getCategories, getProducts } from "@/services/catalog";
@@ -21,10 +19,7 @@ export default async function ProductsPage() {
       <header className="page-hero">
         <div className="container">
           <h1>Veterinary products</h1>
-          <p>
-            Oily-form formulas for cattle, sheep and poultry: gut-health support, vitamins A, D3 and E, and selenium.
-            Search by name or ingredient, or filter by category.
-          </p>
+          <p>Choose a category to see the products inside it: gut-health support, vitamins A, D3 and E, and selenium.</p>
         </div>
       </header>
       <section className="container section" aria-label="Product catalog">
@@ -46,14 +41,7 @@ export default async function ProductsPage() {
             },
           }}
         />
-        {/*
-          The search box reads the URL, which makes Next.js render this part in the browser.
-          The fallback is the full product list, so the HTML that search engines receive
-          already contains every product.
-        */}
-        <Suspense fallback={<ProductsView products={products} categories={categories} query="" category="" />}>
-          <ProductsExplorer products={products} categories={categories} />
-        </Suspense>
+        <CategoryList categories={categories} products={products} />
       </section>
     </>
   );

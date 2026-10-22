@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import type { Product } from "@/types";
-import { ArrowIcon, CrossIcon, DropIcon, PawIcon, PulseIcon, ShieldIcon } from "./Icons";
+import { CrossIcon, PawIcon, PulseIcon, ShieldIcon } from "./Icons";
 import SmartImage from "./SmartImage";
 import TiltCard from "./TiltCard";
 
@@ -27,17 +27,8 @@ export default function Hero({ back, front }: { back: Product; front: Product })
 
       <div className="container hero__inner">
         <div className="hero__text">
-          <p className="hero__badge rise" {...rise(0)}><ShieldIcon /> For veterinary use only</p>
           <h1 id="hero-title" className="rise rise--solid" {...rise(1)}>{siteConfig.heroTitle}</h1>
           <p className="hero__lead rise" {...rise(2)}>{siteConfig.heroText}</p>
-          <div className="hero__actions rise" {...rise(3)}>
-            <Link href="/products" className="btn btn--light">Explore products <ArrowIcon /></Link>
-          </div>
-          <ul className="hero__facts rise" {...rise(4)} aria-label="Key facts">
-            <li><strong>4</strong> formulas</li>
-            <li><strong>1000 ml</strong> bottles</li>
-            <li><strong>3</strong> animal groups</li>
-          </ul>
         </div>
 
         <div className="hero__visual">
@@ -51,7 +42,7 @@ export default function Hero({ back, front }: { back: Product; front: Product })
               <SmartImage src={front.image} width={front.imageWidth} height={front.imageHeight} alt={front.imageAlt} sizes="(max-width: 900px) 48vw, 280px" priority />
             </TiltCard>
           </Link>
-          <p className="chip-float chip-float--a"><DropIcon /> Oily-form formulas</p>
+          <p className="chip-float chip-float--a"><ShieldIcon /> Immune boosters</p>
           <p className="chip-float chip-float--b"><PulseIcon /> Gut health · Vitamins</p>
         </div>
       </div>
